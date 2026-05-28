@@ -20,7 +20,7 @@ AITS 是一款 macOS AI 建議回覆工具。你可以在任何 App 中按下快
 2. 開啟 DMG。
 3. 將 `AITS.app` 拖曳到 `Applications`。
 4. 從 `Applications` 開啟 AITS。
-5. 如果 macOS 阻擋開啟，請在 Finder 中對 `AITS.app` 按右鍵，選擇「打開」，再確認開啟。
+5. 如果 macOS 阻擋開啟，請到「系統設定 > 隱私權與安全性」，找到已阻擋的 AITS，點選「強制打開」。
 
 ## 首次設定
 
@@ -142,7 +142,13 @@ AITS 會保留同一輪的畫面與選取文字，不會重新截圖，也不會
 
 ### macOS 說無法驗證開發者，怎麼辦？
 
-目前版本尚未 Developer ID 簽章與 notarization。請在 Finder 中對 `AITS.app` 按右鍵，選擇「打開」，再確認開啟。
+目前版本尚未 Developer ID 簽章與 notarization。若 macOS 顯示「無法驗證開發者」或阻擋 AITS，請照以下流程處理：
+
+1. 開啟「系統設定」。
+2. 進入「隱私權與安全性」。
+3. 往下找到已被阻擋的 `AITS.app`。
+4. 點選「強制打開」。
+5. 回到 AITS，再次確認開啟。
 
 ### 按快捷鍵沒有反應
 
