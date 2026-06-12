@@ -6,17 +6,17 @@ AITS 是一款 macOS AI 建議回覆工具。你可以在任何 App 中按下快
 
 ## 下載
 
-最新版：AITS v0.1.2
+最新版：AITS v0.1.3
 
-- [下載 AITS-0.1.2.dmg](https://github.com/White8709/AITS-Releases/releases/download/v0.1.2/AITS-0.1.2.dmg)
-- [查看 Release 頁面](https://github.com/White8709/AITS-Releases/releases/tag/v0.1.2)
-- SHA-256：`f78a78adb745e994bc86acd3fa6596504079b3f1774e41c56df2a1e66618bcb2`
+- [下載 AITS-0.1.3.dmg](https://github.com/White8709/AITS-Releases/releases/download/v0.1.3/AITS-0.1.3.dmg)
+- [查看 Release 頁面](https://github.com/White8709/AITS-Releases/releases/tag/v0.1.3)
+- SHA-256：`f2ebf8d4a0a125ca608b001e50423d0c2276c3151b53b2e906cda962b9e41247`
 
 注意：目前版本是 ad-hoc signed local testing build，尚未完成 Developer ID 簽章與 notarization。第一次開啟時，macOS 可能會顯示安全性提示。
 
 ## 安裝
 
-1. 下載 `AITS-0.1.2.dmg`。
+1. 下載 `AITS-0.1.3.dmg`。
 2. 開啟 DMG。
 3. 將 `AITS.app` 拖曳到 `Applications`。
 4. 從 `Applications` 開啟 AITS。
