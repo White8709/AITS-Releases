@@ -1,190 +1,122 @@
-# AITS 操作手冊
+# AITS 公開下載與操作說明
 
-AITS 是一款 macOS AI 建議回覆工具。你可以在任何 App 中按下快捷鍵，讓 AITS 擷取目前畫面，並依照畫面內容產生可直接貼上的建議回覆；如果你已選取文字，AITS 會自動進入改寫模式，產生可取代原文的改寫建議。
+AITS 是一款常駐於 macOS 選單列的 AI 助理，可根據目前畫面產生建議回覆，並針對選取文字提供改寫、翻譯與校對。App 不會開啟首頁，也不顯示 Dock 圖示；所有功能都可從選單列或快捷鍵啟動。
 
-這個 repository 只提供公開下載檔案，不包含主程式碼。
+這個 repository 只提供公開安裝包與使用說明，不包含主程式碼、API key 或私人設定。
 
-## 下載
+## 下載最新版
 
-最新版：AITS v0.1.3
+最新版：AITS v0.2.2
 
-- [下載 AITS-0.1.3.dmg](https://github.com/White8709/AITS-Releases/releases/download/v0.1.3/AITS-0.1.3.dmg)
-- [查看 Release 頁面](https://github.com/White8709/AITS-Releases/releases/tag/v0.1.3)
-- SHA-256：`f2ebf8d4a0a125ca608b001e50423d0c2276c3151b53b2e906cda962b9e41247`
+- [下載 AITS-0.2.2.dmg](https://github.com/White8709/AITS-Releases/releases/download/v0.2.2/AITS-0.2.2.dmg)
+- [查看 AITS v0.2.2 Release](https://github.com/White8709/AITS-Releases/releases/tag/v0.2.2)
+- SHA-256：`8aea8ad532abe2ec9eaf1516ab12d632e6a0a985e1fb78bccf5f8c483b569de5`
 
-注意：目前版本是 ad-hoc signed local testing build，尚未完成 Developer ID 簽章與 notarization。第一次開啟時，macOS 可能會顯示安全性提示。
+目前安裝包採 ad-hoc 簽署，尚未完成 Developer ID 簽章與 Apple notarization。第一次開啟時，macOS 可能會顯示安全性提示。
 
 ## 安裝
 
-1. 下載 `AITS-0.1.3.dmg`。
-2. 開啟 DMG。
-3. 將 `AITS.app` 拖曳到 `Applications`。
-4. 從 `Applications` 開啟 AITS。
-5. 如果 macOS 阻擋開啟，請到「系統設定 > 隱私權與安全性」，找到已阻擋的 AITS，點選「強制打開」。
+1. 下載並開啟 `AITS-0.2.2.dmg`。
+2. 將 `AITS.app` 拖曳到 `Applications`。
+3. 從「應用程式」開啟 AITS。
+4. 如果 macOS 阻擋開啟，請到「系統設定 > 隱私權與安全性」找到 AITS，然後點選「強制打開」。
+5. 啟動後，從 macOS 選單列開啟 AITS 或設定頁。
 
 ## 首次設定
 
-首次使用前，建議先完成以下設定。
+AITS 需要下列 macOS 權限：
 
-### 權限
+- 螢幕錄製：擷取目前畫面，供建議回覆功能理解上下文。
+- 輔助使用：偵測選取文字，並將結果貼回原本的 App。
 
-AITS 需要兩個 macOS 權限：
+請到「系統設定 > 隱私權與安全性」啟用權限。若系統要求重新啟動 App，請完整結束 AITS 後再開啟。
 
-- 螢幕錄製：用來擷取目前畫面，讓 AI 理解上下文。
-- 輔助使用：用來偵測選取文字，以及在你點選建議後自動貼回原 App。
+接著在「設定 > AI」選擇 provider、模型並輸入 API key。API key 會儲存在 macOS Keychain，不會寫入本 repository。
 
-設定位置：
+## 功能與快捷鍵
 
-1. 開啟「系統設定」。
-2. 進入「隱私權與安全性」。
-3. 分別到「螢幕錄製」與「輔助使用」。
-4. 啟用 AITS。
-5. 若系統要求重新啟動 App，請結束並重新開啟 AITS。
+| 功能 | 預設快捷鍵 | 說明 |
+| --- | --- | --- |
+| 建議與改寫 | `Control + T` | 未選取文字時根據畫面產生建議回覆；已選取文字時產生改寫建議。 |
+| 翻譯 | `Control + Y` | 翻譯目前選取的文字，選取結果或按 Return 後貼回原 App。 |
+| 校對 | `Control + U` | 修正文法、拼字、標點與明顯錯字，完成後自動貼回原 App。 |
 
-### AI Provider
+翻譯與校對只會傳送你選取的文字；若沒有選取文字，AITS 不會送出 provider request。
 
-在 AITS 的「AI 設定」頁中設定 Provider。
+## 選單列與快捷鍵開關
 
-目前設計支援：
+選單列提供：
 
-- OpenAI / OpenAI-compatible API
-- Gemini
-- Ollama
-- LM Studio
-- Custom provider
+- 手動產生建議
+- Suggestions、Translation、Proofreading 三個獨立快捷鍵切換按鈕
+- 全域暫停／恢復快捷鍵
+- 開啟設定
+- 結束 AITS
 
-Provider 會按照設定頁中的順序使用：
+三個快捷鍵可以分別開關，狀態會保留到下次啟動。全域「暫停快捷鍵」是主開關：暫停時會停止所有快捷鍵，但不會修改三個獨立開關；恢復後只會重新啟用原本個別開啟的快捷鍵。
 
-- 第一順位是主要 provider。
-- 後面的 provider 是 fallback。
-- 如果第一個 provider 失敗，AITS 會依序嘗試後面的 provider。
+即使快捷鍵已暫停，仍可從選單列手動產生建議。
 
-每個 provider 可設定自己的 API key。API key 會儲存在 macOS Keychain，不會寫入公開設定檔。
+## 設定頁
 
-本機模型例如 Ollama 或 LM Studio 通常需要先在本機啟動服務，並確認 base URL 與模型名稱正確。
-
-## 快捷鍵
-
-預設快捷鍵：
-
-```text
-Control + T
-```
-
-你可以在設定頁修改快捷鍵。
+- General：語言與全域「暫停快捷鍵」主開關。
+- Suggestions：建議／改寫快捷鍵、建議數量、System Prompt 與改寫模式。
+- Translation：翻譯快捷鍵、目標語言與 System Prompt。
+- Proofreading：校對快捷鍵與 System Prompt。
+- AI：provider、模型與 API key。
 
 ## 基本使用
 
 ### 產生建議回覆
 
-適合用在聊天、Email、客服、協作工具等場景。
-
-1. 打開任意 App，例如 Slack、Notion、Safari、Chrome、Mail。
-2. 不選取文字。
-3. 按下 `Control + T`。
-4. AITS 會擷取目前畫面並產生建議回覆。
-5. 點選其中一則建議。
-6. AITS 會將該建議複製到剪貼簿，並嘗試貼回原本 App。
-7. 貼上成功後，建議彈窗會自動關閉。
+1. 打開聊天、Email、客服或其他需要回覆的 App。
+2. 不要選取文字，按下 `Control + T`。
+3. AITS 會擷取目前畫面並產生建議。
+4. 選取建議後，內容會複製到剪貼簿並嘗試貼回原本的 App。
 
 ### 改寫選取文字
 
-適合用在改語氣、改正式程度、縮短文字、改成商務或客服口吻。
-
 1. 在任意 App 中選取一段文字。
 2. 按下 `Control + T`。
-3. AITS 會自動進入「改寫」模式。
-4. 彈窗上方的「改寫模式」預設為「不套用模式」。
-5. 你可以選擇其他改寫模式，例如「正式語氣」、「友善語氣」、「精簡版本」。
-6. 點選建議後，AITS 會嘗試用建議內容取代原本選取的文字。
-7. 成功後，彈窗會自動關閉。
+3. 選擇需要的改寫模式與結果。
+4. AITS 會嘗試用結果取代原本選取的文字。
 
-## 重新產生
+### 翻譯選取文字
 
-建議彈窗上方有一個補充指令輸入框。
+1. 選取需要翻譯的文字。
+2. 按下 `Control + Y`。
+3. 在結果面板選取翻譯，或按 Return 使用目前結果。
+4. AITS 會將翻譯貼回原本的 App。
 
-你可以：
+### 校對選取文字
 
-- 不輸入任何內容，直接按「重新產生」。
-- 輸入補充指令，例如「請更正式一點」、「請縮短」、「請改成適合回覆上司」。
-
-AITS 會保留同一輪的畫面與選取文字，不會重新截圖，也不會重新偵測選字，直接產生另一輪建議。
-
-## 改寫模式設定
-
-在「AI 設定」頁可以管理改寫模式。
-
-可設定項目：
-
-- 新增改寫模式
-- 刪除改寫模式
-- 重新命名
-- 編輯改寫模式的 system prompt
-- 調整改寫模式排序
-- 設定預設改寫模式
-- 預設也可以選擇「不套用模式」
-
-排序會影響建議彈窗中的改寫模式下拉選單順序。
-
-## 建議面板
-
-建議面板支援：
-
-- 拖曳移動
-- 縮放大小
-- `Esc` 關閉
-- `Return` 複製目前選取建議
-- 上下方向鍵切換建議
-
-你可以在設定中開關面板拖曳與縮放。
+1. 選取需要校對的文字。
+2. 按下 `Control + U`。
+3. AITS 完成校對後，會自動將結果貼回原本的 App。
 
 ## 常見問題
 
-### macOS 說無法驗證開發者，怎麼辦？
+### macOS 顯示「無法驗證開發者」
 
-目前版本尚未 Developer ID 簽章與 notarization。若 macOS 顯示「無法驗證開發者」或阻擋 AITS，請照以下流程處理：
-
-1. 開啟「系統設定」。
-2. 進入「隱私權與安全性」。
-3. 往下找到已被阻擋的 `AITS.app`。
-4. 點選「強制打開」。
-5. 回到 AITS，再次確認開啟。
+目前版本尚未 Developer ID 簽章與 notarization。請到「系統設定 > 隱私權與安全性」，找到被阻擋的 `AITS.app`，點選「強制打開」後再次確認。
 
 ### 按快捷鍵沒有反應
 
-請確認：
+請確認 AITS 已啟動、快捷鍵未被其他 App 佔用、對應的獨立快捷鍵開關已開啟，而且全域快捷鍵沒有暫停。
 
-- AITS 已經開啟。
-- 快捷鍵沒有被其他 App 佔用。
-- AITS 沒有暫停快捷鍵。
-- AITS 已取得必要權限。
+### 無法擷取畫面或自動貼上
 
-### 無法擷取畫面
-
-請確認 AITS 已取得「螢幕錄製」權限。授權後請重新啟動 AITS。
-
-### 選取文字後沒有進入改寫模式
-
-請確認 AITS 已取得「輔助使用」權限。部分 App 對選取文字支援不一致，AITS 會嘗試使用剪貼簿 fallback 偵測選取文字。
-
-### 點選建議後沒有自動貼上
-
-請確認 AITS 已取得「輔助使用」權限。部分 App 或特殊輸入框可能不接受自動貼上，此時建議內容仍會被複製到剪貼簿，可手動按 `Command + V` 貼上。
-
-### API key 存在哪裡？
-
-API key 會儲存在 macOS Keychain。AITS 不會把 API key 寫入 release repo 或公開檔案。
+請確認 AITS 已取得「螢幕錄製」與「輔助使用」權限。部分 App 或特殊輸入框可能不接受自動貼上，此時結果仍會保留在剪貼簿，可使用 `Command + V` 手動貼上。
 
 ## 隱私說明
 
-- 截圖只會在你觸發建議時處理。
-- 截圖會送到你設定的 AI provider。
-- API key 儲存在 Keychain。
-- 點選建議後才會寫入剪貼簿並嘗試貼上。
-- Public release repo 只提供下載檔，不包含私有設定或 API key。
+- AITS 只會在你主動觸發功能時處理畫面或選取文字。
+- 畫面或文字會送到你設定的 AI provider。
+- API key 儲存在 macOS Keychain。
+- 公開下載 repository 不包含 API key、私人設定或主程式碼。
 
 ## 已知限制
 
-- 目前 release 尚未 notarized。
-- 不同 App 對選取文字與自動貼上的支援程度不同。
-- 本機模型需要自行啟動 Ollama、LM Studio 或相容服務。
+- 目前 Release 尚未 notarized。
+- 不同 App 對選取文字與自動貼上的支援程度可能不同。
+- 使用本機模型時，需自行啟動相容的本機服務。
