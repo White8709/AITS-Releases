@@ -8,17 +8,17 @@ AITS 是一款常駐於 macOS 選單列的 AI 助理，可根據目前畫面產�
 
 ## 下載最新版
 
-最新版：AITS v0.2.3
+最新版：AITS v0.2.4
 
-- [下載 AITS-0.2.3.dmg](https://github.com/White8709/AITS-Releases/releases/download/v0.2.3/AITS-0.2.3.dmg)
-- [查看 AITS v0.2.3 Release](https://github.com/White8709/AITS-Releases/releases/tag/v0.2.3)
-- SHA-256：`33725b49bd89b3d3f919e087dc741381038c8dab13bd7748d5dffaf3fee24ffb`
+- [下載 AITS-0.2.4.dmg](https://github.com/White8709/AITS-Releases/releases/download/v0.2.4/AITS-0.2.4.dmg)
+- [查看 AITS v0.2.4 Release](https://github.com/White8709/AITS-Releases/releases/tag/v0.2.4)
+- SHA-256：`8db575ce5ec53afd63a79387bde1c3320f320ddbbd07d401bd35de8ebbe92f0b`
 
 目前安裝包採 ad-hoc 簽署，尚未完成 Developer ID 簽章與 Apple notarization。第一次開啟時，macOS 可能會顯示安全性提示。
 
 ## 安裝
 
-1. 下載並開啟 `AITS-0.2.3.dmg`。
+1. 下載並開啟 `AITS-0.2.4.dmg`。
 2. 將 `AITS.app` 拖曳到 `Applications`。
 3. 從「應用程式」開啟 AITS。
 4. 如果 macOS 阻擋開啟，請到「系統設定 > 隱私權與安全性」找到 AITS，然後點選「強制打開」。
