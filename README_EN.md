@@ -2,23 +2,23 @@
 
 [繁體中文](README.md) | [English](README_EN.md)
 
-AITS is a macOS menu bar AI assistant that generates suggested replies from the current screen and provides rewriting, translation, and proofreading for selected text. The app does not open a home window or show a Dock icon; all features are available from the menu bar or through hotkeys.
+AITS is a macOS menu bar AI assistant that generates suggested replies from the current screen and provides rewriting, translation, proofreading, and image OCR. The app does not open a home window or show a Dock icon; all features are available from the menu bar or through hotkeys.
 
 This repository provides public installers and user documentation only. It does not contain the source code, API keys, or private settings.
 
 ## Download the Latest Version
 
-Latest version: AITS v0.2.4
+Latest version: AITS v0.3.0
 
-- [Download AITS-0.2.4.dmg](https://github.com/White8709/AITS-Releases/releases/download/v0.2.4/AITS-0.2.4.dmg)
-- [View the AITS v0.2.4 release](https://github.com/White8709/AITS-Releases/releases/tag/v0.2.4)
-- SHA-256: `8db575ce5ec53afd63a79387bde1c3320f320ddbbd07d401bd35de8ebbe92f0b`
+- [Download AITS-0.3.0.dmg](https://github.com/White8709/AITS-Releases/releases/download/v0.3.0/AITS-0.3.0.dmg)
+- [View the AITS v0.3.0 release](https://github.com/White8709/AITS-Releases/releases/tag/v0.3.0)
+- SHA-256: `d017f89ac481a159778ffdffc441c6db717c708f4dcbebb66e2531c57377990e`
 
 The current installer uses an ad-hoc signature and has not been signed with a Developer ID or notarized by Apple. macOS may display a security warning the first time you open the app.
 
 ## Installation
 
-1. Download and open `AITS-0.2.4.dmg`.
+1. Download and open `AITS-0.3.0.dmg`.
 2. Drag `AITS.app` into `Applications`.
 3. Open AITS from the Applications folder.
 4. If macOS blocks the app, open System Settings > Privacy & Security, find AITS, and click Open Anyway.
@@ -42,8 +42,9 @@ Next, open Settings > AI to choose a provider and model, then enter your API key
 | Suggested replies and rewriting | `Control + T` | Generates suggested replies from the current screen when no text is selected, or rewriting suggestions when text is selected. |
 | Translation | `Control + Y` | Translates selected text, then pastes the chosen result after you select it or press Return. |
 | Proofreading | `Control + U` | Corrects grammar, spelling, punctuation, and clear typographical errors, then automatically pastes the result. |
+| Image OCR | `Option + V` | Reads text from an image on the clipboard and pastes it into the original app. |
 
-Translation and proofreading send only the selected text. If no text is selected, AITS does not send a provider request.
+Translation and proofreading send only the selected text; image OCR sends only the copied image data. If there is no processable content, AITS does not send a provider request.
 
 ## Menu Bar and Hotkey Controls
 
@@ -51,11 +52,12 @@ The menu bar provides:
 
 - Manual suggestion generation
 - Three independent hotkey toggle buttons for Suggestions, Translation, and Proofreading
+- An independent OCR hotkey toggle button
 - A global pause/resume hotkeys control
 - Settings
 - Quit AITS
 
-The three hotkeys can be enabled or disabled independently, and their states persist across launches. The global Pause Hotkeys control acts as the master switch: pausing stops every hotkey without changing the three individual switches; resuming restores only the hotkeys that were individually enabled.
+The four hotkeys can be enabled or disabled independently, and their states persist across launches. The global Pause Hotkeys control acts as the master switch: pausing stops every hotkey without changing the individual switches; resuming restores only the hotkeys that were individually enabled.
 
 Manual suggestion generation remains available from the menu bar even while hotkeys are paused.
 
@@ -65,6 +67,7 @@ Manual suggestion generation remains available from the menu bar even while hotk
 - Suggestions: suggested reply/rewrite hotkey, suggestion count, System Prompt, and rewrite profiles.
 - Translation: translation hotkey, target language, and System Prompt.
 - Proofreading: proofreading hotkey and System Prompt.
+- OCR: image OCR hotkey and dedicated System Prompt.
 - AI: provider, model, and API key.
 
 ## Basic Usage
@@ -95,6 +98,14 @@ Manual suggestion generation remains available from the menu bar even while hotk
 1. Select the text you want to proofread.
 2. Press `Control + U`.
 3. When proofreading is complete, AITS automatically pastes the result into the original app.
+
+### Read Text from a Copied Image
+
+1. Copy an image in any app.
+2. Press `Option + V`.
+3. AITS recognizes the text in the image and pastes it into the original app.
+
+OCR does not open a result window; progress and errors appear in the menu bar. Copied image files from Finder do not trigger OCR.
 
 ## Troubleshooting
 

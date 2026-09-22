@@ -2,23 +2,23 @@
 
 [繁體中文](README.md) | [English](README_EN.md)
 
-AITS 是一款常駐於 macOS 選單列的 AI 助理，可根據目前畫面產生建議回覆，並針對選取文字提供改寫、翻譯與校對。App 不會開啟首頁，也不顯示 Dock 圖示；所有功能都可從選單列或快捷鍵啟動。
+AITS 是一款常駐於 macOS 選單列的 AI 助理，可根據目前畫面產生建議回覆，並針對選取文字提供改寫、翻譯、校對與圖片 OCR。App 不會開啟首頁，也不顯示 Dock 圖示；所有功能都可從選單列或快捷鍵啟動。
 
 這個 repository 只提供公開安裝包與使用說明，不包含主程式碼、API key 或私人設定。
 
 ## 下載最新版
 
-最新版：AITS v0.2.4
+最新版：AITS v0.3.0
 
-- [下載 AITS-0.2.4.dmg](https://github.com/White8709/AITS-Releases/releases/download/v0.2.4/AITS-0.2.4.dmg)
-- [查看 AITS v0.2.4 Release](https://github.com/White8709/AITS-Releases/releases/tag/v0.2.4)
-- SHA-256：`8db575ce5ec53afd63a79387bde1c3320f320ddbbd07d401bd35de8ebbe92f0b`
+- [下載 AITS-0.3.0.dmg](https://github.com/White8709/AITS-Releases/releases/download/v0.3.0/AITS-0.3.0.dmg)
+- [查看 AITS v0.3.0 Release](https://github.com/White8709/AITS-Releases/releases/tag/v0.3.0)
+- SHA-256：`d017f89ac481a159778ffdffc441c6db717c708f4dcbebb66e2531c57377990e`
 
 目前安裝包採 ad-hoc 簽署，尚未完成 Developer ID 簽章與 Apple notarization。第一次開啟時，macOS 可能會顯示安全性提示。
 
 ## 安裝
 
-1. 下載並開啟 `AITS-0.2.4.dmg`。
+1. 下載並開啟 `AITS-0.3.0.dmg`。
 2. 將 `AITS.app` 拖曳到 `Applications`。
 3. 從「應用程式」開啟 AITS。
 4. 如果 macOS 阻擋開啟，請到「系統設定 > 隱私權與安全性」找到 AITS，然後點選「強制打開」。
@@ -42,8 +42,9 @@ AITS 需要下列 macOS 權限：
 | 建議與改寫 | `Control + T` | 未選取文字時根據畫面產生建議回覆；已選取文字時產生改寫建議。 |
 | 翻譯 | `Control + Y` | 翻譯目前選取的文字，選取結果或按 Return 後貼回原 App。 |
 | 校對 | `Control + U` | 修正文法、拼字、標點與明顯錯字，完成後自動貼回原 App。 |
+| 圖片 OCR | `Option + V` | 辨識剪貼簿中的圖片文字，直接貼回原 App。 |
 
-翻譯與校對只會傳送你選取的文字；若沒有選取文字，AITS 不會送出 provider request。
+翻譯與校對只會傳送你選取的文字；圖片 OCR 只會傳送剪貼簿中的圖片資料。若沒有可處理的內容，AITS 不會送出 provider request。
 
 ## 選單列與快捷鍵開關
 
@@ -51,11 +52,12 @@ AITS 需要下列 macOS 權限：
 
 - 手動產生建議
 - Suggestions、Translation、Proofreading 三個獨立快捷鍵切換按鈕
+- OCR 獨立快捷鍵切換按鈕
 - 全域暫停／恢復快捷鍵
 - 開啟設定
 - 結束 AITS
 
-三個快捷鍵可以分別開關，狀態會保留到下次啟動。全域「暫停快捷鍵」是主開關：暫停時會停止所有快捷鍵，但不會修改三個獨立開關；恢復後只會重新啟用原本個別開啟的快捷鍵。
+四個快捷鍵可以分別開關，狀態會保留到下次啟動。全域「暫停快捷鍵」是主開關：暫停時會停止所有快捷鍵，但不會修改個別開關；恢復後只會重新啟用原本個別開啟的快捷鍵。
 
 即使快捷鍵已暫停，仍可從選單列手動產生建議。
 
@@ -65,6 +67,7 @@ AITS 需要下列 macOS 權限：
 - Suggestions：建議／改寫快捷鍵、建議數量、System Prompt 與改寫模式。
 - Translation：翻譯快捷鍵、目標語言與 System Prompt。
 - Proofreading：校對快捷鍵與 System Prompt。
+- OCR：圖片 OCR 快捷鍵與專用 System Prompt。
 - AI：provider、模型與 API key。
 
 ## 基本使用
@@ -95,6 +98,14 @@ AITS 需要下列 macOS 權限：
 1. 選取需要校對的文字。
 2. 按下 `Control + U`。
 3. AITS 完成校對後，會自動將結果貼回原本的 App。
+
+### 辨識剪貼簿圖片
+
+1. 在任意 App 中複製圖片。
+2. 按下 `Option + V`。
+3. AITS 會辨識圖片中的文字，並直接貼回原本的 App。
+
+OCR 不會開啟結果視窗；辨識狀態與錯誤會顯示在選單列。Finder 複製的圖片檔案不會觸發 OCR。
 
 ## 常見問題
 
