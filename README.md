@@ -8,17 +8,17 @@ AITS 是一款常駐於 macOS 選單列的 AI 助理，可根據目前畫面產�
 
 ## 下載最新版
 
-最新版：AITS v0.3.0
+最新版：AITS v0.3.3
 
-- [下載 AITS-0.3.0.dmg](https://github.com/White8709/AITS-Releases/releases/download/v0.3.0/AITS-0.3.0.dmg)
-- [查看 AITS v0.3.0 Release](https://github.com/White8709/AITS-Releases/releases/tag/v0.3.0)
-- SHA-256：`d017f89ac481a159778ffdffc441c6db717c708f4dcbebb66e2531c57377990e`
+- [下載 AITS-0.3.3.dmg](https://github.com/White8709/AITS-Releases/releases/download/v0.3.3/AITS-0.3.3.dmg)
+- [查看 AITS v0.3.3 Release](https://github.com/White8709/AITS-Releases/releases/tag/v0.3.3)
+- SHA-256：`8f92dfe83bc4147fc0bac92120d11f911fa3f44e1575eeffc5d0d92522fdcf27`
 
 目前安裝包採 ad-hoc 簽署，尚未完成 Developer ID 簽章與 Apple notarization。第一次開啟時，macOS 可能會顯示安全性提示。
 
 ## 安裝
 
-1. 下載並開啟 `AITS-0.3.0.dmg`。
+1. 下載並開啟 `AITS-0.3.3.dmg`。
 2. 將 `AITS.app` 拖曳到 `Applications`。
 3. 從「應用程式」開啟 AITS。
 4. 如果 macOS 阻擋開啟，請到「系統設定 > 隱私權與安全性」找到 AITS，然後點選「強制打開」。
@@ -69,6 +69,8 @@ AITS 需要下列 macOS 權限：
 - Proofreading：校對快捷鍵與 System Prompt。
 - OCR：圖片 OCR 快捷鍵與專用 System Prompt。
 - AI：provider、模型與 API key。
+
+「設定 > General」也可開啟「登入時自動啟動」；若 macOS 要求核准，請到「系統設定 > 一般 > 登入項目」允許 AITS。
 
 ## 基本使用
 

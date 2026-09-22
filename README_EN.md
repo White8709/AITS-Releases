@@ -8,17 +8,17 @@ This repository provides public installers and user documentation only. It does 
 
 ## Download the Latest Version
 
-Latest version: AITS v0.3.0
+Latest version: AITS v0.3.3
 
-- [Download AITS-0.3.0.dmg](https://github.com/White8709/AITS-Releases/releases/download/v0.3.0/AITS-0.3.0.dmg)
-- [View the AITS v0.3.0 release](https://github.com/White8709/AITS-Releases/releases/tag/v0.3.0)
-- SHA-256: `d017f89ac481a159778ffdffc441c6db717c708f4dcbebb66e2531c57377990e`
+- [Download AITS-0.3.3.dmg](https://github.com/White8709/AITS-Releases/releases/download/v0.3.3/AITS-0.3.3.dmg)
+- [View the AITS v0.3.3 release](https://github.com/White8709/AITS-Releases/releases/tag/v0.3.3)
+- SHA-256: `8f92dfe83bc4147fc0bac92120d11f911fa3f44e1575eeffc5d0d92522fdcf27`
 
 The current installer uses an ad-hoc signature and has not been signed with a Developer ID or notarized by Apple. macOS may display a security warning the first time you open the app.
 
 ## Installation
 
-1. Download and open `AITS-0.3.0.dmg`.
+1. Download and open `AITS-0.3.3.dmg`.
 2. Drag `AITS.app` into `Applications`.
 3. Open AITS from the Applications folder.
 4. If macOS blocks the app, open System Settings > Privacy & Security, find AITS, and click Open Anyway.
@@ -69,6 +69,8 @@ Manual suggestion generation remains available from the menu bar even while hotk
 - Proofreading: proofreading hotkey and System Prompt.
 - OCR: image OCR hotkey and dedicated System Prompt.
 - AI: provider, model, and API key.
+
+Settings > General also offers Launch at Login. If macOS requires approval, enable AITS in System Settings > General > Login Items.
 
 ## Basic Usage
 
