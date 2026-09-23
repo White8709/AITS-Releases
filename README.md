@@ -2,23 +2,23 @@
 
 [繁體中文](README.md) | [English](README_EN.md)
 
-AITS 是一款常駐於 macOS 選單列的 AI 助理，可根據目前畫面產生建議回覆，並針對選取文字提供改寫、翻譯、校對與圖片 OCR。App 不會開啟首頁，也不顯示 Dock 圖示；所有功能都可從選單列或快捷鍵啟動。
+AITS 是一款常駐於 macOS 選單列的 AI 助理，可根據目前畫面產生建議回覆，並針對選取文字提供改寫、翻譯、校對、圖片 OCR 與長按 fn 語音輸入。App 不會開啟首頁，也不顯示 Dock 圖示；所有功能都可從選單列或快捷鍵啟動。
 
 這個 repository 只提供公開安裝包與使用說明，不包含主程式碼、API key 或私人設定。
 
 ## 下載最新版
 
-最新版：AITS v0.3.3
+最新版：AITS v0.4.2
 
-- [下載 AITS-0.3.3.dmg](https://github.com/White8709/AITS-Releases/releases/download/v0.3.3/AITS-0.3.3.dmg)
-- [查看 AITS v0.3.3 Release](https://github.com/White8709/AITS-Releases/releases/tag/v0.3.3)
-- SHA-256：`8f92dfe83bc4147fc0bac92120d11f911fa3f44e1575eeffc5d0d92522fdcf27`
+- [下載 AITS-0.4.2.dmg](https://github.com/White8709/AITS-Releases/releases/download/v0.4.2/AITS-0.4.2.dmg)
+- [查看 AITS v0.4.2 Release](https://github.com/White8709/AITS-Releases/releases/tag/v0.4.2)
+- SHA-256：`02f0100cb68e849cf6ab9c6caaa0c1a3d62066b202cec42acb85aa6a03a2edda`
 
 目前安裝包採 ad-hoc 簽署，尚未完成 Developer ID 簽章與 Apple notarization。第一次開啟時，macOS 可能會顯示安全性提示。
 
 ## 安裝
 
-1. 下載並開啟 `AITS-0.3.3.dmg`。
+1. 下載並開啟 `AITS-0.4.2.dmg`。
 2. 將 `AITS.app` 拖曳到 `Applications`。
 3. 從「應用程式」開啟 AITS。
 4. 如果 macOS 阻擋開啟，請到「系統設定 > 隱私權與安全性」找到 AITS，然後點選「強制打開」。
@@ -30,6 +30,7 @@ AITS 需要下列 macOS 權限：
 
 - 螢幕錄製：擷取目前畫面，供建議回覆功能理解上下文。
 - 輔助使用：偵測選取文字，並將結果貼回原本的 App。
+- 麥克風：長按 fn 使用語音輸入時擷取音訊。
 
 請到「系統設定 > 隱私權與安全性」啟用權限。若系統要求重新啟動 App，請完整結束 AITS 後再開啟。
 
@@ -43,6 +44,7 @@ AITS 需要下列 macOS 權限：
 | 翻譯 | `Control + Y` | 翻譯目前選取的文字，選取結果或按 Return 後貼回原 App。 |
 | 校對 | `Control + U` | 修正文法、拼字、標點與明顯錯字，完成後自動貼回原 App。 |
 | 圖片 OCR | `Option + V` | 辨識剪貼簿中的圖片文字，直接貼回原 App。 |
+| 語音輸入 | 長按 `fn` | 將語音即時轉寫並插入目前聚焦的文字欄位。 |
 
 翻譯與校對只會傳送你選取的文字；圖片 OCR 只會傳送剪貼簿中的圖片資料。若沒有可處理的內容，AITS 不會送出 provider request。
 
@@ -53,6 +55,7 @@ AITS 需要下列 macOS 權限：
 - 手動產生建議
 - Suggestions、Translation、Proofreading 三個獨立快捷鍵切換按鈕
 - OCR 獨立快捷鍵切換按鈕
+- 語音輸入開關與狀態
 - 全域暫停／恢復快捷鍵
 - 開啟設定
 - 結束 AITS
@@ -68,6 +71,7 @@ AITS 需要下列 macOS 權限：
 - Translation：翻譯快捷鍵、目標語言與 System Prompt。
 - Proofreading：校對快捷鍵與 System Prompt。
 - OCR：圖片 OCR 快捷鍵與專用 System Prompt。
+- Voice：長按 fn 語音輸入、Gemini Provider、語音模型與長按判定時間。
 - AI：provider、模型與 API key。
 
 「設定 > General」也可開啟「登入時自動啟動」；若 macOS 要求核准，請到「系統設定 > 一般 > 登入項目」允許 AITS。
@@ -108,6 +112,15 @@ AITS 需要下列 macOS 權限：
 3. AITS 會辨識圖片中的文字，並直接貼回原本的 App。
 
 OCR 不會開啟結果視窗；辨識狀態與錯誤會顯示在選單列。Finder 複製的圖片檔案不會觸發 OCR。
+
+### 語音輸入
+
+1. 在「設定 > Voice」啟用語音輸入，選擇已設定的 Gemini Provider，並確認已允許麥克風權限。
+2. 將游標放在可編輯的文字欄位。
+3. 按住 `fn` 開始說話，放開 `fn` 完成輸入。
+4. 轉寫內容會即時插入原本聚焦的文字欄位。
+
+若 macOS 的 fn 鍵短按會觸發系統功能，請在「系統設定 > 鍵盤」將「按下 fn 鍵時」設為「不執行任何操作」。
 
 ## 常見問題
 

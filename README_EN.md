@@ -2,23 +2,23 @@
 
 [繁體中文](README.md) | [English](README_EN.md)
 
-AITS is a macOS menu bar AI assistant that generates suggested replies from the current screen and provides rewriting, translation, proofreading, and image OCR. The app does not open a home window or show a Dock icon; all features are available from the menu bar or through hotkeys.
+AITS is a macOS menu bar AI assistant that generates suggested replies from the current screen and provides rewriting, translation, proofreading, image OCR, and hold-fn voice input. The app does not open a home window or show a Dock icon; all features are available from the menu bar or through hotkeys.
 
 This repository provides public installers and user documentation only. It does not contain the source code, API keys, or private settings.
 
 ## Download the Latest Version
 
-Latest version: AITS v0.3.3
+Latest version: AITS v0.4.2
 
-- [Download AITS-0.3.3.dmg](https://github.com/White8709/AITS-Releases/releases/download/v0.3.3/AITS-0.3.3.dmg)
-- [View the AITS v0.3.3 release](https://github.com/White8709/AITS-Releases/releases/tag/v0.3.3)
-- SHA-256: `8f92dfe83bc4147fc0bac92120d11f911fa3f44e1575eeffc5d0d92522fdcf27`
+- [Download AITS-0.4.2.dmg](https://github.com/White8709/AITS-Releases/releases/download/v0.4.2/AITS-0.4.2.dmg)
+- [View the AITS v0.4.2 release](https://github.com/White8709/AITS-Releases/releases/tag/v0.4.2)
+- SHA-256: `02f0100cb68e849cf6ab9c6caaa0c1a3d62066b202cec42acb85aa6a03a2edda`
 
 The current installer uses an ad-hoc signature and has not been signed with a Developer ID or notarized by Apple. macOS may display a security warning the first time you open the app.
 
 ## Installation
 
-1. Download and open `AITS-0.3.3.dmg`.
+1. Download and open `AITS-0.4.2.dmg`.
 2. Drag `AITS.app` into `Applications`.
 3. Open AITS from the Applications folder.
 4. If macOS blocks the app, open System Settings > Privacy & Security, find AITS, and click Open Anyway.
@@ -30,6 +30,7 @@ AITS requires the following macOS permissions:
 
 - Screen Recording: captures the current screen so the suggested reply feature can understand its context.
 - Accessibility: detects selected text and pastes results back into the original app.
+- Microphone: captures audio while you hold fn for voice input.
 
 Enable these permissions in System Settings > Privacy & Security. If macOS asks you to restart the app, quit AITS completely and open it again.
 
@@ -43,6 +44,7 @@ Next, open Settings > AI to choose a provider and model, then enter your API key
 | Translation | `Control + Y` | Translates selected text, then pastes the chosen result after you select it or press Return. |
 | Proofreading | `Control + U` | Corrects grammar, spelling, punctuation, and clear typographical errors, then automatically pastes the result. |
 | Image OCR | `Option + V` | Reads text from an image on the clipboard and pastes it into the original app. |
+| Voice input | Hold `fn` | Transcribes speech live and inserts it into the focused text field. |
 
 Translation and proofreading send only the selected text; image OCR sends only the copied image data. If there is no processable content, AITS does not send a provider request.
 
@@ -53,6 +55,7 @@ The menu bar provides:
 - Manual suggestion generation
 - Three independent hotkey toggle buttons for Suggestions, Translation, and Proofreading
 - An independent OCR hotkey toggle button
+- Voice input toggle and status
 - A global pause/resume hotkeys control
 - Settings
 - Quit AITS
@@ -68,6 +71,7 @@ Manual suggestion generation remains available from the menu bar even while hotk
 - Translation: translation hotkey, target language, and System Prompt.
 - Proofreading: proofreading hotkey and System Prompt.
 - OCR: image OCR hotkey and dedicated System Prompt.
+- Voice: hold-fn voice input, Gemini provider, voice model, and hold duration.
 - AI: provider, model, and API key.
 
 Settings > General also offers Launch at Login. If macOS requires approval, enable AITS in System Settings > General > Login Items.
@@ -108,6 +112,15 @@ Settings > General also offers Launch at Login. If macOS requires approval, enab
 3. AITS recognizes the text in the image and pastes it into the original app.
 
 OCR does not open a result window; progress and errors appear in the menu bar. Copied image files from Finder do not trigger OCR.
+
+### Voice Input
+
+1. Enable Voice in Settings > Voice, select a configured Gemini provider, and allow microphone access.
+2. Focus an editable text field.
+3. Hold `fn` while speaking, then release `fn` to finish.
+4. The transcript is inserted into the focused text field as it arrives.
+
+If a short fn press triggers a macOS system action, set “Press fn key to” to “Do Nothing” in System Settings > Keyboard.
 
 ## Troubleshooting
 
