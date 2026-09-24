@@ -8,17 +8,17 @@ AITS 是一款常駐於 macOS 選單列的 AI 助理，可根據目前畫面產�
 
 ## 下載最新版
 
-最新版：AITS v0.4.2
+最新版：AITS v0.4.3
 
-- [下載 AITS-0.4.2.dmg](https://github.com/White8709/AITS-Releases/releases/download/v0.4.2/AITS-0.4.2.dmg)
-- [查看 AITS v0.4.2 Release](https://github.com/White8709/AITS-Releases/releases/tag/v0.4.2)
-- SHA-256：`02f0100cb68e849cf6ab9c6caaa0c1a3d62066b202cec42acb85aa6a03a2edda`
+- [下載 AITS-0.4.3.dmg](https://github.com/White8709/AITS-Releases/releases/download/v0.4.3/AITS-0.4.3.dmg)
+- [查看 AITS v0.4.3 Release](https://github.com/White8709/AITS-Releases/releases/tag/v0.4.3)
+- SHA-256：`38e2cca70f9869ea7292b1f43b69170247f9394bbfe3d30d485da882701f1bed`
 
 目前安裝包採 ad-hoc 簽署，尚未完成 Developer ID 簽章與 Apple notarization。第一次開啟時，macOS 可能會顯示安全性提示。
 
 ## 安裝
 
-1. 下載並開啟 `AITS-0.4.2.dmg`。
+1. 下載並開啟 `AITS-0.4.3.dmg`。
 2. 將 `AITS.app` 拖曳到 `Applications`。
 3. 從「應用程式」開啟 AITS。
 4. 如果 macOS 阻擋開啟，請到「系統設定 > 隱私權與安全性」找到 AITS，然後點選「強制打開」。
@@ -116,9 +116,9 @@ OCR 不會開啟結果視窗；辨識狀態與錯誤會顯示在選單列。Find
 ### 語音輸入
 
 1. 在「設定 > Voice」啟用語音輸入，選擇已設定的 Gemini Provider，並確認已允許麥克風權限。
-2. 將游標放在可編輯的文字欄位。
-3. 按住 `fn` 開始說話，放開 `fn` 完成輸入。
-4. 轉寫內容會即時插入原本聚焦的文字欄位。
+2. 按住 `fn` 開始說話，不需要先聚焦可編輯欄位。
+3. 轉寫中的文字會即時寫入游標位置，並隨辨識結果更新。
+4. 放開 `fn` 完成輸入；切換 App、點擊或按下其他按鍵會停止後續寫入。
 
 若 macOS 的 fn 鍵短按會觸發系統功能，請在「系統設定 > 鍵盤」將「按下 fn 鍵時」設為「不執行任何操作」。
 

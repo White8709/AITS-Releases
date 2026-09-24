@@ -8,17 +8,17 @@ This repository provides public installers and user documentation only. It does 
 
 ## Download the Latest Version
 
-Latest version: AITS v0.4.2
+Latest version: AITS v0.4.3
 
-- [Download AITS-0.4.2.dmg](https://github.com/White8709/AITS-Releases/releases/download/v0.4.2/AITS-0.4.2.dmg)
-- [View the AITS v0.4.2 release](https://github.com/White8709/AITS-Releases/releases/tag/v0.4.2)
-- SHA-256: `02f0100cb68e849cf6ab9c6caaa0c1a3d62066b202cec42acb85aa6a03a2edda`
+- [Download AITS-0.4.3.dmg](https://github.com/White8709/AITS-Releases/releases/download/v0.4.3/AITS-0.4.3.dmg)
+- [View the AITS v0.4.3 release](https://github.com/White8709/AITS-Releases/releases/tag/v0.4.3)
+- SHA-256: `38e2cca70f9869ea7292b1f43b69170247f9394bbfe3d30d485da882701f1bed`
 
 The current installer uses an ad-hoc signature and has not been signed with a Developer ID or notarized by Apple. macOS may display a security warning the first time you open the app.
 
 ## Installation
 
-1. Download and open `AITS-0.4.2.dmg`.
+1. Download and open `AITS-0.4.3.dmg`.
 2. Drag `AITS.app` into `Applications`.
 3. Open AITS from the Applications folder.
 4. If macOS blocks the app, open System Settings > Privacy & Security, find AITS, and click Open Anyway.
@@ -116,9 +116,9 @@ OCR does not open a result window; progress and errors appear in the menu bar. C
 ### Voice Input
 
 1. Enable Voice in Settings > Voice, select a configured Gemini provider, and allow microphone access.
-2. Focus an editable text field.
-3. Hold `fn` while speaking, then release `fn` to finish.
-4. The transcript is inserted into the focused text field as it arrives.
+2. Hold `fn` while speaking; an editable-field check is not required first.
+3. Interim transcription is written at the cursor and revised as recognition improves.
+4. Release `fn` to finish; switching apps, clicking, or typing another key stops further insertion.
 
 If a short fn press triggers a macOS system action, set “Press fn key to” to “Do Nothing” in System Settings > Keyboard.
 
