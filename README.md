@@ -12,7 +12,7 @@ AITS 是一款常駐於 macOS 選單列的 AI 助理，可根據目前畫面產�
 
 - [下載 AITS-0.4.4.dmg](https://github.com/White8709/AITS-Releases/releases/download/v0.4.4/AITS-0.4.4.dmg)
 - [查看 AITS v0.4.4 Release](https://github.com/White8709/AITS-Releases/releases/tag/v0.4.4)
-- SHA-256：`6252e0049c479ca467b09300e4b249e31ac905cf5b368a7f1e073b0f740f3eb4`
+- SHA-256：`614c4409409b4b2d973c0b5852bb0830695df93518934455c8663f0b8ae749a8`
 
 目前安裝包採 ad-hoc 簽署，尚未完成 Developer ID 簽章與 Apple notarization。第一次開啟時，macOS 可能會顯示安全性提示。
 
