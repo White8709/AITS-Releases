@@ -2,23 +2,23 @@
 
 [繁體中文](README.md) | [English](README_EN.md)
 
-AITS is a macOS menu bar AI assistant that generates suggested replies from the current screen and provides rewriting, translation, proofreading, image OCR, and hold-fn voice input. The app does not open a home window or show a Dock icon; all features are available from the menu bar or through hotkeys.
+AITS is a macOS menu bar AI assistant that generates suggested replies from the current screen and provides rewriting, translation, proofreading, image OCR, text to speech, and hold-fn voice input. The app does not open a home window or show a Dock icon; all features are available from the menu bar or through hotkeys.
 
 This repository provides public installers and user documentation only. It does not contain the source code, API keys, or private settings.
 
 ## Download the Latest Version
 
-Latest version: AITS v0.4.3
+Latest version: AITS v0.4.4
 
-- [Download AITS-0.4.3.dmg](https://github.com/White8709/AITS-Releases/releases/download/v0.4.3/AITS-0.4.3.dmg)
-- [View the AITS v0.4.3 release](https://github.com/White8709/AITS-Releases/releases/tag/v0.4.3)
-- SHA-256: `38e2cca70f9869ea7292b1f43b69170247f9394bbfe3d30d485da882701f1bed`
+- [Download AITS-0.4.4.dmg](https://github.com/White8709/AITS-Releases/releases/download/v0.4.4/AITS-0.4.4.dmg)
+- [View the AITS v0.4.4 release](https://github.com/White8709/AITS-Releases/releases/tag/v0.4.4)
+- SHA-256: `6252e0049c479ca467b09300e4b249e31ac905cf5b368a7f1e073b0f740f3eb4`
 
 The current installer uses an ad-hoc signature and has not been signed with a Developer ID or notarized by Apple. macOS may display a security warning the first time you open the app.
 
 ## Installation
 
-1. Download and open `AITS-0.4.3.dmg`.
+1. Download and open `AITS-0.4.4.dmg`.
 2. Drag `AITS.app` into `Applications`.
 3. Open AITS from the Applications folder.
 4. If macOS blocks the app, open System Settings > Privacy & Security, find AITS, and click Open Anyway.
@@ -44,6 +44,8 @@ Next, open Settings > AI to choose a provider and model, then enter your API key
 | Translation | `Control + Y` | Translates selected text, then pastes the chosen result after you select it or press Return. |
 | Proofreading | `Control + U` | Corrects grammar, spelling, punctuation, and clear typographical errors, then automatically pastes the result. |
 | Image OCR | `Option + V` | Reads text from an image on the clipboard and pastes it into the original app. |
+| Read selected text | `Control + H` | Converts selected text to speech and plays it in the speech player. |
+| Read captured image text | `Control + J` | Recognizes text from a clipboard image and reads it aloud. |
 | Voice input | Hold `fn` | Transcribes speech live and inserts it into the focused text field. |
 
 Translation and proofreading send only the selected text; image OCR sends only the copied image data. If there is no processable content, AITS does not send a provider request.
@@ -72,6 +74,7 @@ Manual suggestion generation remains available from the menu bar even while hotk
 - Proofreading: proofreading hotkey and System Prompt.
 - OCR: image OCR hotkey and dedicated System Prompt.
 - Voice: hold-fn voice input, Gemini provider, voice model, and hold duration.
+- Text to Speech: Gemini provider, TTS model, voice, and style prompt.
 - AI: provider, model, and API key.
 
 Settings > General also offers Launch at Login. If macOS requires approval, enable AITS in System Settings > General > Login Items.
@@ -121,6 +124,18 @@ OCR does not open a result window; progress and errors appear in the menu bar. C
 4. Release `fn` to finish; switching apps, clicking, or typing another key stops further insertion.
 
 If a short fn press triggers a macOS system action, set “Press fn key to” to “Do Nothing” in System Settings > Keyboard.
+
+### Text to Speech
+
+1. Select text and press `Control + H`.
+2. To read captured image text, use macOS `Control + Shift + Command + 4`, then press `Control + J`.
+3. In Settings > Text to Speech choose the Gemini provider, TTS model, voice, and style prompt.
+
+Playback uses a pinned mini player with pause, seek, replay, and copy controls; audio stays in memory.
+
+### App Configuration Backup
+
+Settings > General exports and loads a versioned JSON backup for settings, providers, voice input, TTS, themes, and launch preference. API keys are excluded by default; including them stores plaintext.
 
 ## Troubleshooting
 

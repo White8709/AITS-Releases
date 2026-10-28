@@ -2,23 +2,23 @@
 
 [繁體中文](README.md) | [English](README_EN.md)
 
-AITS 是一款常駐於 macOS 選單列的 AI 助理，可根據目前畫面產生建議回覆，並針對選取文字提供改寫、翻譯、校對、圖片 OCR 與長按 fn 語音輸入。App 不會開啟首頁，也不顯示 Dock 圖示；所有功能都可從選單列或快捷鍵啟動。
+AITS 是一款常駐於 macOS 選單列的 AI 助理，可根據目前畫面產生建議回覆，並針對選取文字提供改寫、翻譯、校對、圖片 OCR、文字轉語音與長按 fn 語音輸入。App 不會開啟首頁，也不顯示 Dock 圖示；所有功能都可從選單列或快捷鍵啟動。
 
 這個 repository 只提供公開安裝包與使用說明，不包含主程式碼、API key 或私人設定。
 
 ## 下載最新版
 
-最新版：AITS v0.4.3
+最新版：AITS v0.4.4
 
-- [下載 AITS-0.4.3.dmg](https://github.com/White8709/AITS-Releases/releases/download/v0.4.3/AITS-0.4.3.dmg)
-- [查看 AITS v0.4.3 Release](https://github.com/White8709/AITS-Releases/releases/tag/v0.4.3)
-- SHA-256：`38e2cca70f9869ea7292b1f43b69170247f9394bbfe3d30d485da882701f1bed`
+- [下載 AITS-0.4.4.dmg](https://github.com/White8709/AITS-Releases/releases/download/v0.4.4/AITS-0.4.4.dmg)
+- [查看 AITS v0.4.4 Release](https://github.com/White8709/AITS-Releases/releases/tag/v0.4.4)
+- SHA-256：`6252e0049c479ca467b09300e4b249e31ac905cf5b368a7f1e073b0f740f3eb4`
 
 目前安裝包採 ad-hoc 簽署，尚未完成 Developer ID 簽章與 Apple notarization。第一次開啟時，macOS 可能會顯示安全性提示。
 
 ## 安裝
 
-1. 下載並開啟 `AITS-0.4.3.dmg`。
+1. 下載並開啟 `AITS-0.4.4.dmg`。
 2. 將 `AITS.app` 拖曳到 `Applications`。
 3. 從「應用程式」開啟 AITS。
 4. 如果 macOS 阻擋開啟，請到「系統設定 > 隱私權與安全性」找到 AITS，然後點選「強制打開」。
@@ -44,6 +44,8 @@ AITS 需要下列 macOS 權限：
 | 翻譯 | `Control + Y` | 翻譯目前選取的文字，選取結果或按 Return 後貼回原 App。 |
 | 校對 | `Control + U` | 修正文法、拼字、標點與明顯錯字，完成後自動貼回原 App。 |
 | 圖片 OCR | `Option + V` | 辨識剪貼簿中的圖片文字，直接貼回原 App。 |
+| 選字朗讀 | `Control + H` | 將選取文字轉成語音並在播放器中播放。 |
+| 擷圖文字朗讀 | `Control + J` | 辨識剪貼簿圖片中的文字並朗讀。 |
 | 語音輸入 | 長按 `fn` | 將語音即時轉寫並插入目前聚焦的文字欄位。 |
 
 翻譯與校對只會傳送你選取的文字；圖片 OCR 只會傳送剪貼簿中的圖片資料。若沒有可處理的內容，AITS 不會送出 provider request。
@@ -72,6 +74,7 @@ AITS 需要下列 macOS 權限：
 - Proofreading：校對快捷鍵與 System Prompt。
 - OCR：圖片 OCR 快捷鍵與專用 System Prompt。
 - Voice：長按 fn 語音輸入、Gemini Provider、語音模型與長按判定時間。
+- Text to Speech：Gemini Provider、TTS 模型、聲音與語音 Prompt。
 - AI：provider、模型與 API key。
 
 「設定 > General」也可開啟「登入時自動啟動」；若 macOS 要求核准，請到「系統設定 > 一般 > 登入項目」允許 AITS。
@@ -121,6 +124,18 @@ OCR 不會開啟結果視窗；辨識狀態與錯誤會顯示在選單列。Find
 4. 放開 `fn` 完成輸入；切換 App、點擊或按下其他按鍵會停止後續寫入。
 
 若 macOS 的 fn 鍵短按會觸發系統功能，請在「系統設定 > 鍵盤」將「按下 fn 鍵時」設為「不執行任何操作」。
+
+### 文字轉語音
+
+1. 選取文字後按下 `Control + H`。
+2. 若要朗讀圖片文字，使用 macOS `Control + Shift + Command + 4` 擷取到剪貼簿，再按下 `Control + J`。
+3. 在「設定 > Text to Speech」選擇 Gemini Provider、TTS 模型、聲音與語音 Prompt。
+
+朗讀會在置頂小窗／播放器中播放，可暫停、快轉、拖曳進度、重新朗讀與複製文字；音訊只保留在記憶體中。
+
+### App 設定檔備份
+
+「設定 > General」可匯出／載入 versioned JSON backup，包含設定、Provider、語音輸入、TTS、主題與啟動偏好。API keys 預設不包含；若勾選包含，會以明文保存。
 
 ## 常見問題
 
