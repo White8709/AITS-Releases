@@ -8,17 +8,17 @@ This repository provides public installers and user documentation only. It does 
 
 ## Download the Latest Version
 
-Latest version: AITS v0.4.4
+Latest version: AITS v0.4.5
 
-- [Download AITS-0.4.4.dmg](https://github.com/White8709/AITS-Releases/releases/download/v0.4.4/AITS-0.4.4.dmg)
-- [View the AITS v0.4.4 release](https://github.com/White8709/AITS-Releases/releases/tag/v0.4.4)
-- SHA-256: `614c4409409b4b2d973c0b5852bb0830695df93518934455c8663f0b8ae749a8`
+- [Download AITS-0.4.5.dmg](https://github.com/White8709/AITS-Releases/releases/download/v0.4.5/AITS-0.4.5.dmg)
+- [View the AITS v0.4.5 release](https://github.com/White8709/AITS-Releases/releases/tag/v0.4.5)
+- SHA-256: `169575ef20a4629352ab7aa49848a60747e758469ba53dda3938250ff63b2d12`
 
 The current installer uses an ad-hoc signature and has not been signed with a Developer ID or notarized by Apple. macOS may display a security warning the first time you open the app.
 
 ## Installation
 
-1. Download and open `AITS-0.4.4.dmg`.
+1. Download and open `AITS-0.4.5.dmg`.
 2. Drag `AITS.app` into `Applications`.
 3. Open AITS from the Applications folder.
 4. If macOS blocks the app, open System Settings > Privacy & Security, find AITS, and click Open Anyway.
