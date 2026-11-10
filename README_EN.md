@@ -12,7 +12,7 @@ Latest version: AITS v0.4.5
 
 - [Download AITS-0.4.5.dmg](https://github.com/White8709/AITS-Releases/releases/download/v0.4.5/AITS-0.4.5.dmg)
 - [View the AITS v0.4.5 release](https://github.com/White8709/AITS-Releases/releases/tag/v0.4.5)
-- SHA-256: `b97d695adb1ae0d8e4642d9100405b2e86789cca35e3c3e7006be56428a0028c`
+- SHA-256: `403b934844133594adf8ff0139dc4c4439d179ae6c359a8f3462f1369f0a8c7d`
 
 The current installer uses an ad-hoc signature and has not been signed with a Developer ID or notarized by Apple. macOS may display a security warning the first time you open the app.
 
